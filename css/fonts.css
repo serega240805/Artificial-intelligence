@@ -1,0 +1,20 @@
+@font-face {
+    font-family: CircularStd;
+    font-weight: 500;
+    font-style: normal;
+    src: local("CircularStd"),
+        url("../fonts/CircularStd-Medium.woff2"),
+        url("../fonts/CircularStd-Medium.woff"),
+        url("../fonts/CircularStd-Medium.eot");
+    font-display: swap;
+}
+@font-face {
+    font-family: CircularStd;
+    font-weight: 450;
+    font-style: normal;
+    src: local("CircularStd"),
+        url("../fonts/CircularStd-Book.woff2"),
+        url("../fonts/CircularStd-Book.woff"),
+        url("../fonts/CircularStd-Book.eot");
+    font-display: swap;
+}
