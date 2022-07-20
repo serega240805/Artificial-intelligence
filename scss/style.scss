@@ -27,7 +27,6 @@ h4 {
     margin: 0 auto;
 }
 .button {
-    display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 15px 30px;
@@ -97,10 +96,14 @@ h4 {
     &__top {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        @include breakpoint (xl) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     &__left {
-        margin-top: 160px;
     }
 
     &__left-subtitle {
@@ -108,6 +111,10 @@ h4 {
         font-size: 18px;
         line-height: 28px;
         margin-bottom: 10px;
+        @include breakpoint (xl) {
+            text-align: center;
+            margin-top: 40px;
+        }
     }
 
     &__left-title {
@@ -116,6 +123,9 @@ h4 {
         line-height: 71.5px;
         color: #fff;
         margin-bottom: 40px;
+        @include breakpoint (xl) {
+            text-align: center;
+        }
     }
 
     &__left-text {
@@ -123,10 +133,23 @@ h4 {
         font-size: 18px;
         line-height: 29px;
         margin-bottom: 50px;
+        @include breakpoint (xl) {
+            text-align: center;
+            max-width: 420px;
+            margin: 25px auto;
+        }
     }
 
     &__left-btn-box {
         display: flex;
+        @include breakpoint (xl) {
+            align-items: center;
+            justify-content: center;
+        }
+        @include breakpoint (sm) {
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
     }
 
     &__left-btn {
@@ -135,6 +158,10 @@ h4 {
         margin-right: 20px;
         font-size: 20px;
         line-height: 27px;
+        @include breakpoint (sm) {
+            margin-bottom: 20px;
+            margin-right: 0px;
+        }
     }
 
     &__left-link {
@@ -150,13 +177,16 @@ h4 {
             position: absolute;
             top: 15px;
             left: 15px;
-            width: 20px;
+            width: 19px;
             height: 26px;
             background: url(../images/header/Polygon1.svg);
         }
     }
 
     &__right-img{
+        @include breakpoint (md) {
+            max-width: 100%;
+        }
     }
 
     &__bootom-list {
@@ -170,9 +200,17 @@ h4 {
             justify-content: center;
             align-items: center;
         }
+        @include breakpoint (lg) {
+            padding-bottom: 55px;
+        }
+        @include breakpoint (md) {
+            padding-bottom: 35px;
+        }
     }
     &__bootom-item{
         flex: 0 0 25%;
+        max-width: 320px;
+        margin: 0 auto;
         @include breakpoint (lg) {
             flex: 0 0 50%;
             margin-bottom: 55px;
@@ -180,6 +218,10 @@ h4 {
         @include breakpoint (md) {
             margin-bottom: 50px;
             padding-left: 20px;
+            margin-bottom: 35px;
+        }
+        @include breakpoint (sm) {
+            margin-bottom: 35px;
         }
     }
     &__bootom-img{
