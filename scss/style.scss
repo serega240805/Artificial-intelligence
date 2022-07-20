@@ -179,18 +179,27 @@ h4 {
         }
         @include breakpoint (md) {
             margin-bottom: 50px;
-            padding-inline-start: 20px;
+            padding-left: 20px;
         }
+    }
+    &__bootom-img{
+        max-width: 100%;
     }
 }
 .apply {
     &__content {
         display: flex;
+        align-items: center;
+        @include breakpoint (xl) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__text-box {
-        margin-top: 200px;
         margin-left: 70px;
+        @include breakpoint (xl) {
+            margin-left: 0px;
+        }
     }
 
     &__title {
@@ -199,16 +208,42 @@ h4 {
         line-height: 52px;
         margin-bottom: 30px;
         color: #fff;
+        @include breakpoint (xl) {
+            margin-top: 50px;
+            text-align: center;
+        }
     }
 
     &__text {
-        width: 460px;
+        max-width: 460px;
         color: gray;
         line-height: 26px;
         margin-bottom: 50px;
+        @include breakpoint (xl) {
+            text-align: center;
+            margin: 0 auto;
+        }
+        @include breakpoint (sm) {
+            
+        }
     }
+
+    &__btn{
+        @include breakpoint (xl) {
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+    }
+
     &__img {
         margin-bottom: 170px;
+        @include breakpoint (xl) {
+            margin: 80px auto;
+            max-width: 100%;
+        }
+        @include breakpoint (md) {
+            margin-left: 10px;
+        }
     }
 }
 .feature {
