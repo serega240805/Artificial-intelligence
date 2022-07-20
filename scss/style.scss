@@ -265,13 +265,11 @@ h4 {
             text-align: center;
             margin: 0 auto;
         }
-        @include breakpoint (sm) {
-            
-        }
     }
 
     &__btn{
         @include breakpoint (xl) {
+            display: block;
             margin: 0 auto;
             margin-top: 30px;
         }
@@ -302,7 +300,7 @@ h4 {
     }
 
     &__img {
-        margin: 35px 132px;
+        margin: 35px 105px;
     }
 
     &__title {
@@ -341,14 +339,22 @@ h4 {
 .about {
     &__container {
         display: flex;
+        align-items: center;
+        @include breakpoint (xl) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 
     &__img {
         margin-bottom: 170px;
+        @include breakpoint (md) {
+            max-width: 100%;
+        }
     }
 
     &__content {
-        margin-top: 100px;
+        margin-bottom: 80px;
     }
 
     &__title {
@@ -356,6 +362,9 @@ h4 {
         font-size: 40px;
         line-height: 52px;
         margin-bottom: 40px;
+        @include breakpoint (xl) {
+            text-align: center;
+        }
     }
 
     &__text {
@@ -363,6 +372,9 @@ h4 {
         color: gray;
         &:not(:last-child) {
             margin-bottom: 20px;
+        }
+        @include breakpoint (xl) {
+            text-align: center;
         }
     }
 }
