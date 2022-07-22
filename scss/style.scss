@@ -62,12 +62,19 @@ h4 {
             height: 57px;
             background: url(../images/ico/iconka.svg);
         }
+        @include breakpoint(sm) {
+            font-size: 14px;
+        }
     }
 
     &__list {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-right: 200px;
+        @include breakpoint(lg) {
+            display: none;
+        }
     }
 
     &__list-item {
@@ -80,6 +87,102 @@ h4 {
         color: #fff;
     }
 
+    .nav-bar {
+        position: absolute;
+        background-color: #122;
+        top: 0;
+        right: 100%;
+        height: 100vh;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: position 2.9s;
+    }
+
+    .toggle {
+        left: 0;
+        box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .toggle-menu {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        top: 38px;
+        right: 20px;
+        width: 40px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 2px 2px 2px 3px;
+        border-radius: 5px;
+        cursor: pointer;
+        @include breakpoint(minlg) {
+            display: none;
+        }
+    }
+
+    .line {
+        width: 100%;
+        height: 3px;
+        border-radius: 5px;
+        background-color: #fff;
+        transition: transform 0.2s ease-out;
+    }
+
+    .toggle .line1 {
+        background-color: #000000;
+        transform: scale(0.9) rotateZ(-45deg) translate(-6px, 4px);
+    }
+
+    .toggle .line2 {
+        display: none;
+    }
+
+    .toggle .line3 {
+        background-color: #000000;
+        transform: scale(0.9) rotateZ(45deg) translate(-6px, -4px);
+    }
+
+    .toggle .toggle-menu {
+        background-color: white;
+    }
+
+    .nav-list {
+        list-style: none;
+    }
+
+    .nav-list-item {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-link {
+        color: #fff;
+        font-size: 22px;
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 4px;
+    }
+
+    .nav-link::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        transform: scaleX(0);
+        transition: transform 0.4s ease-in-out;
+        transform-origin: left;
+    }
+
+    .nav-link:hover::before {
+        transform: scaleX(1);
+    }
+
     &__btn {
         margin-right: 20px;
         display: flex;
@@ -89,6 +192,13 @@ h4 {
         gap: 10px;
         background: #3a68b8;
         border-radius: 5px;
+        @include breakpoint(lg) {
+            margin-right: 55px;
+        }
+        @include breakpoint(sm) {
+            padding: 10px 15px;
+            margin-top: 5px;
+        }
     }
 }
 .body {
@@ -97,7 +207,7 @@ h4 {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -111,7 +221,7 @@ h4 {
         font-size: 18px;
         line-height: 28px;
         margin-bottom: 10px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             text-align: center;
             margin-top: 40px;
         }
@@ -123,7 +233,7 @@ h4 {
         line-height: 71.5px;
         color: #fff;
         margin-bottom: 40px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             text-align: center;
         }
     }
@@ -133,7 +243,7 @@ h4 {
         font-size: 18px;
         line-height: 29px;
         margin-bottom: 50px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             text-align: center;
             max-width: 420px;
             margin: 25px auto;
@@ -142,11 +252,11 @@ h4 {
 
     &__left-btn-box {
         display: flex;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             align-items: center;
             justify-content: center;
         }
-        @include breakpoint (sm) {
+        @include breakpoint(sm) {
             flex-direction: column;
             margin-bottom: 20px;
         }
@@ -158,7 +268,7 @@ h4 {
         margin-right: 20px;
         font-size: 20px;
         line-height: 27px;
-        @include breakpoint (sm) {
+        @include breakpoint(sm) {
             margin-bottom: 20px;
             margin-right: 0px;
         }
@@ -183,8 +293,8 @@ h4 {
         }
     }
 
-    &__right-img{
-        @include breakpoint (md) {
+    &__right-img {
+        @include breakpoint(md) {
             max-width: 100%;
         }
     }
@@ -195,36 +305,36 @@ h4 {
         flex-wrap: wrap;
         margin-top: 90px;
         padding-bottom: 100px;
-        @include breakpoint (md) {
+        @include breakpoint(md) {
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
-        @include breakpoint (lg) {
+        @include breakpoint(lg) {
             padding-bottom: 55px;
         }
-        @include breakpoint (md) {
+        @include breakpoint(md) {
             padding-bottom: 35px;
         }
     }
-    &__bootom-item{
+    &__bootom-item {
         flex: 0 0 25%;
         max-width: 320px;
         margin: 0 auto;
-        @include breakpoint (lg) {
+        @include breakpoint(lg) {
             flex: 0 0 50%;
             margin-bottom: 55px;
         }
-        @include breakpoint (md) {
+        @include breakpoint(md) {
             margin-bottom: 50px;
             padding-left: 20px;
             margin-bottom: 35px;
         }
-        @include breakpoint (sm) {
+        @include breakpoint(sm) {
             margin-bottom: 35px;
         }
     }
-    &__bootom-img{
+    &__bootom-img {
         max-width: 100%;
     }
 }
@@ -232,14 +342,14 @@ h4 {
     &__content {
         display: flex;
         align-items: center;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             flex-direction: column-reverse;
         }
     }
 
     &__text-box {
         margin-left: 70px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             margin-left: 0px;
         }
     }
@@ -250,7 +360,7 @@ h4 {
         line-height: 52px;
         margin-bottom: 30px;
         color: #fff;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             margin-top: 50px;
             text-align: center;
         }
@@ -261,14 +371,14 @@ h4 {
         color: gray;
         line-height: 26px;
         margin-bottom: 50px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             text-align: center;
             margin: 0 auto;
         }
     }
 
-    &__btn{
-        @include breakpoint (xl) {
+    &__btn {
+        @include breakpoint(xl) {
             display: block;
             margin: 0 auto;
             margin-top: 30px;
@@ -277,11 +387,11 @@ h4 {
 
     &__img {
         margin-bottom: 170px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             margin: 80px auto;
             max-width: 100%;
         }
-        @include breakpoint (md) {
+        @include breakpoint(md) {
             margin-left: 10px;
         }
     }
@@ -340,7 +450,7 @@ h4 {
     &__container {
         display: flex;
         align-items: center;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -348,7 +458,7 @@ h4 {
 
     &__img {
         margin-bottom: 170px;
-        @include breakpoint (md) {
+        @include breakpoint(md) {
             max-width: 100%;
         }
     }
@@ -362,7 +472,7 @@ h4 {
         font-size: 40px;
         line-height: 52px;
         margin-bottom: 40px;
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             text-align: center;
         }
     }
@@ -373,7 +483,7 @@ h4 {
         &:not(:last-child) {
             margin-bottom: 20px;
         }
-        @include breakpoint (xl) {
+        @include breakpoint(xl) {
             text-align: center;
         }
     }
@@ -467,7 +577,7 @@ h4 {
         margin-bottom: 32px;
     }
 
-    &__list-item{
+    &__list-item {
         &:not(:last-child) {
             margin-bottom: 20px;
         }
@@ -483,7 +593,6 @@ h4 {
 
     &__list-socials {
         margin: 21px 0px 40px 0px;
-        
     }
 
     &__list-socials-link {
