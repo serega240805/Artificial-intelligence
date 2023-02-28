@@ -931,7 +931,6 @@ h4 {
 .footer {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(-41.9%, #020a18), color-stop(2436.24%, #ffffff));
   background: linear-gradient(180deg, #020a18 -41.9%, #ffffff 2436.24%);
-  min-height: 508px;
 }
 .footer__content {
   display: -webkit-box;
